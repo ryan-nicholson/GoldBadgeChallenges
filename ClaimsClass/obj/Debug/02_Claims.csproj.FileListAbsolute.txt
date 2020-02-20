@@ -1,0 +1,6 @@
+C:\ElevenFiftyProjects\Gold Badge\GoldBadgeChallenges\ClaimsClass\bin\Debug\ClaimsClass.exe.config
+C:\ElevenFiftyProjects\Gold Badge\GoldBadgeChallenges\ClaimsClass\bin\Debug\ClaimsClass.exe
+C:\ElevenFiftyProjects\Gold Badge\GoldBadgeChallenges\ClaimsClass\bin\Debug\ClaimsClass.pdb
+C:\ElevenFiftyProjects\Gold Badge\GoldBadgeChallenges\ClaimsClass\obj\Debug\02_Claims.csprojAssemblyReference.cache
+C:\ElevenFiftyProjects\Gold Badge\GoldBadgeChallenges\ClaimsClass\obj\Debug\ClaimsClass.exe
+C:\ElevenFiftyProjects\Gold Badge\GoldBadgeChallenges\ClaimsClass\obj\Debug\ClaimsClass.pdb

@@ -1,0 +1,10 @@
+C:\ElevenFiftyProjects\Gold Badge\GoldBadgeChallenges\Menu_Repository_ConcoleUI\bin\Debug\Menu_Repository_ConcoleUI.exe.config
+C:\ElevenFiftyProjects\Gold Badge\GoldBadgeChallenges\Menu_Repository_ConcoleUI\bin\Debug\Menu_Repository_ConcoleUI.exe
+C:\ElevenFiftyProjects\Gold Badge\GoldBadgeChallenges\Menu_Repository_ConcoleUI\bin\Debug\Menu_Repository_ConcoleUI.pdb
+C:\ElevenFiftyProjects\Gold Badge\GoldBadgeChallenges\Menu_Repository_ConcoleUI\bin\Debug\01_KCafe.exe
+C:\ElevenFiftyProjects\Gold Badge\GoldBadgeChallenges\Menu_Repository_ConcoleUI\bin\Debug\01_KCafe.pdb
+C:\ElevenFiftyProjects\Gold Badge\GoldBadgeChallenges\Menu_Repository_ConcoleUI\bin\Debug\01_KCafe.exe.config
+C:\ElevenFiftyProjects\Gold Badge\GoldBadgeChallenges\Menu_Repository_ConcoleUI\obj\Debug\01_Menu_Repository_ConcoleUI.csprojAssemblyReference.cache
+C:\ElevenFiftyProjects\Gold Badge\GoldBadgeChallenges\Menu_Repository_ConcoleUI\obj\Debug\01_Menu_Repository_ConcoleUI.csproj.CopyComplete
+C:\ElevenFiftyProjects\Gold Badge\GoldBadgeChallenges\Menu_Repository_ConcoleUI\obj\Debug\Menu_Repository_ConcoleUI.exe
+C:\ElevenFiftyProjects\Gold Badge\GoldBadgeChallenges\Menu_Repository_ConcoleUI\obj\Debug\Menu_Repository_ConcoleUI.pdb

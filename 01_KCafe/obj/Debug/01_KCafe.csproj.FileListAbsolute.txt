@@ -1,0 +1,6 @@
+C:\ElevenFiftyProjects\Gold Badge\GoldBadgeChallenges\01_KCafe\obj\Debug\01_KCafe.csprojAssemblyReference.cache
+C:\ElevenFiftyProjects\Gold Badge\GoldBadgeChallenges\01_KCafe\bin\Debug\01_KCafe.exe.config
+C:\ElevenFiftyProjects\Gold Badge\GoldBadgeChallenges\01_KCafe\bin\Debug\01_KCafe.exe
+C:\ElevenFiftyProjects\Gold Badge\GoldBadgeChallenges\01_KCafe\bin\Debug\01_KCafe.pdb
+C:\ElevenFiftyProjects\Gold Badge\GoldBadgeChallenges\01_KCafe\obj\Debug\01_KCafe.exe
+C:\ElevenFiftyProjects\Gold Badge\GoldBadgeChallenges\01_KCafe\obj\Debug\01_KCafe.pdb

@@ -1,0 +1,6 @@
+C:\ElevenFiftyProjects\Gold Badge\GoldBadgeChallenges\Badge_Repository_ConsoleUI\bin\Debug\Badge_Repository_ConsoleUI.exe.config
+C:\ElevenFiftyProjects\Gold Badge\GoldBadgeChallenges\Badge_Repository_ConsoleUI\bin\Debug\Badge_Repository_ConsoleUI.exe
+C:\ElevenFiftyProjects\Gold Badge\GoldBadgeChallenges\Badge_Repository_ConsoleUI\bin\Debug\Badge_Repository_ConsoleUI.pdb
+C:\ElevenFiftyProjects\Gold Badge\GoldBadgeChallenges\Badge_Repository_ConsoleUI\obj\Debug\Badge_Repository_ConsoleUI.exe
+C:\ElevenFiftyProjects\Gold Badge\GoldBadgeChallenges\Badge_Repository_ConsoleUI\obj\Debug\Badge_Repository_ConsoleUI.pdb
+C:\ElevenFiftyProjects\Gold Badge\GoldBadgeChallenges\Badge_Repository_ConsoleUI\obj\Debug\Badge_Repository_ConsoleUI.csprojAssemblyReference.cache
