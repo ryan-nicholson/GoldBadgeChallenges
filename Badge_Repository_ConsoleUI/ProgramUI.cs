@@ -9,87 +9,143 @@ namespace Badge_Repository_ConsoleUI
 {
     public class ProgramUI
     {
-        private Badge_Repository _badgeRepository = new Badge_Repository();
-
+        private BadgeRepository _badgeRepository = new BadgeRepository();
         public void Run()
         {
             SeedContent();
-            Menu();
+            RunMenu();
         }
-        private void Menu()
+
+        private void RunMenu()
         {
-            //display options to user
-            Console.Clear();
-            bool keepRunning = true;
-            while (keepRunning)
+            bool continueRunning = true;
+            while (continueRunning)
             {
-                Console.WriteLine("Komodo Insurance\n" +
-                "Please choose an option:\n" +
-                "1 - Add a badge \n" +
-                "2 - Edit a badge\n" +
-                "3 - List all badges\n" +
+                Console.Clear();
+                Console.WriteLine("Komodo Insurance Badges\n" +
+                "Make a selction from the menu:\n" +
+                "1 - Add a Badge \n" +
+                "2 - Update a Badge\n" +
+                "3 - List all Badges\n" +
                 "4 - Exit");
-                string userSelection = Console.ReadLine(); //getting user input
-                switch (userSelection) //evaluating user input
+                string userSelection = Console.ReadLine();
+                switch (userSelection)
                 {
                     case "1":
-                        ListByBadgeID();
-                        break;
-
-                    case "2":
                         AddNewBadge();
                         break;
-
-                    case "3":
-                        UpdatingExistingBadge();
+                    case "2":
+                        UpdateExistingBadge();
                         break;
-
+                    case "3":
+                        ListAllBadges();
+                        break;
                     case "4":
-                        keepRunning = false;
+                        continueRunning = false;
                         break;
                     default:
-                        Console.WriteLine("Please enter a number from the selection.");
+                        Console.WriteLine("Invalid selection. Please try again...");
+                        Console.ReadKey();
                         break;
                 }
             }
         }
-
-        private void ListByBadgeID()
-        {
-            Dictionary<int, List<string>> badgeDictionary = _badgeRepository.ListByBadgeID(badgeID, listOfDoors);
-            Console.WriteLine("Badge ID", List<string>);
-        }
         private void AddNewBadge()
         {
-            Badge content = new Badge();
-            Console.WriteLine("What is the number on the badge:");
-            content.BadgeID = int.Parse(Console.ReadLine());
-
-            Console.WriteLine("List a door that it needs access to:");
-            content.ListOfDoors = Console.ReadLine();
-
-            Console.WriteLine("Do you want to add another door?\n" +
-                "Enter y for yes\n" +
-                "Enter n for no");
-            string userResponse = Console.ReadLine();
-            if (userResponse == "y")
+            Badge newBadge = new Badge();
+            Console.Write("What is the new badge's numeric ID ? (ex: 12): ");
+            newBadge.BadgeID = int.Parse(Console.ReadLine());
+            bool continueRunning = true;
+            while (continueRunning)
             {
-                Console.WriteLine("What is the number on the badge:");
-                content.BadgeID = int.Parse(Console.ReadLine());
-
-                Console.WriteLine("List a door that it needs access to:");
-                content.ListOfDoors = Console.ReadLine();
+                Console.Write("Please enter a Door ID for which this badge should have access: ");
+                newBadge.ListOfDoors = new List<string>();
+                string userInput = Console.ReadLine().ToUpper();
+                newBadge.ListOfDoors.Add(userInput);
+                Console.Write("Any other doors to add ? (y/n)");
+                string userResponse = Console.ReadLine();
+                if (userResponse == "n")
+                {
+                    continueRunning = false;
+                    _badgeRepository.AddNewBadge(newBadge);
+                    Console.WriteLine($"\nYour new badge, Badge ID: {newBadge.BadgeID}, has been added.\n\n" +
+                        $"Press any key to return to the main menu.");
+                    Console.ReadKey();
+                }
+                else
+                {
+                    continueRunning = true;
+                }
             }
-            else
+        }
+        private void ListAllBadges()
+        {
+            Dictionary<int, List<string>> badgeDictionary = _badgeRepository.ListOfBadges();
+
+            Console.WriteLine("{0, -10}", "BadgeID:");
+            foreach (KeyValuePair<int, List<string>> badge in badgeDictionary)
             {
-                Console.WriteLine("Press any key");
-                Console.ReadLine();
+                Console.WriteLine(badge.Key);
+                foreach (string door in badge.Value)
+                {
+                    Console.Write("{0} {1, -5}","", door);
+                }
+                Console.WriteLine();
             }
-
-
-            _badgeRepository.AddNewBadge(content);
-            Console.WriteLine("The badge was added! Press any key to return to the main menu");
+            Console.WriteLine("Press any key to return to the main menu.");
             Console.ReadKey();
         }
+
+        private void UpdateExistingBadge()
+        {
+            Console.Write("What is the badge number you would like to update ?: ");
+            int userBadgeInput = int.Parse(Console.ReadLine());
+            Badge badge = _badgeRepository.GetBadgeByBadgeID(userBadgeInput);
+            foreach (string door in badge.ListOfDoors)
+            {
+                Console.WriteLine("{0, -10} {1, -10}", badge.BadgeID, door);
+            }
+            Console.WriteLine("What would you like to do ?\n" +
+                "1 - Remove a door\n" +
+                "2 - Add a door\n" +
+                "3 - Cancel\n");
+            string userResponse = Console.ReadLine();
+            switch (userResponse)
+            {
+                case "1":
+                    Console.WriteLine($"Which door would you like to remove?");
+                    string removeDoor = Console.ReadLine().ToUpper();
+                    badge.ListOfDoors.Remove(removeDoor);
+                    Console.WriteLine($"Door {removeDoor} was removed from Badge {badge.BadgeID}");
+                    break;
+
+                case "2":
+                    Console.WriteLine($"Which door would you like to add?");
+                    string addDoor = Console.ReadLine().ToUpper();
+                    badge.ListOfDoors.Add(addDoor);
+                    Console.WriteLine($"Door {addDoor} was added to Badge {badge.BadgeID}");
+                    break;
+
+                case "3":
+                    break;
+
+                default:
+                    Console.WriteLine("Invalid. Please try again...");
+                    break;
+            }
+            Console.WriteLine("Press any key to return to the main menu.");
+            Console.ReadKey();
+        }
+
+        private void SeedContent()
+        {
+            Badge badgeOne = new Badge(10, new List<string> { "A1", "B1", "C1", "A2", "B2", "C2", });
+            Badge badgeTwo = new Badge(11, new List<string> { "B1", "B2", "C1" });
+
+            _badgeRepository.AddNewBadge(badgeOne);
+            _badgeRepository.AddNewBadge(badgeTwo);
+
+        }
     }
-}  
+
+}

@@ -6,39 +6,34 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace _03_Badge_Repository_Tests
 {
     [TestClass]
-    public class Badge_Repository_Tests
+    public class BadgeTests
     {
-        [TestMethod]
-        public void TestAddNewBadge()
-        {
-            _badgeRepo.AddNewBadge(_badge);
-            int expected = 1;
-            int actual = _badgeRepo.BadgeList().Count;
-            Assert.AreEqual(expected, actual);
-        }
-
-        private Badge_Repository _badgeRepo;
+        private BadgeRepository _badgeRepository;
         private Badge _badge;
 
         [TestInitialize]
-
         public void Arrange()
-        //creating fields
         {
-            _badgeRepo = new Badge_Repository();
-            _badge = new Badge(100, new List<string> { "A1, A2, A3" });
-            _badgeRepo.AddNewBadge(_badge);
+            _badgeRepository = new BadgeRepository();
+            _badge = new Badge(100, new List<string> { "A1", "A2", "A3" });
         }
 
         [TestMethod]
-        public void UpdateExistingBadge_ShouldReturnTrue()
+        public void AddNewBadgeToListTest()
         {
-            Badge newAccess = new Badge(100, new List<string> { "A1, A2, A3" });
-            bool updateResult = _badgeRepo.UpdateExistingBadge(100, newAccess);
-
-            Assert.IsTrue(updateResult);
+            _badgeRepository.AddNewBadge(_badge);
+            int expected = 1;
+            int actual = _badgeRepository.ListOfBadges().Count;
+            Assert.AreEqual(expected, actual);
         }
 
-        
+        [TestMethod]
+        public void GetBadgeByBadgeIDTest()
+        {
+            _badgeRepository.AddNewBadge(_badge);
+            Badge actual = _badgeRepository.GetBadgeByBadgeID(100);
+            Assert.AreEqual(_badge.BadgeID, actual.BadgeID);
+            Assert.AreEqual(_badge.ListOfDoors, actual.ListOfDoors);
+        }
     }
 }

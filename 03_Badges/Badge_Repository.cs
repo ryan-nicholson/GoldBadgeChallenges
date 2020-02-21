@@ -6,24 +6,23 @@ using System.Threading.Tasks;
 
 namespace _03_Badges
 {
-    public class Badge_Repository
+    public class BadgeRepository
     {
-        private Dictionary<int, List<string>> badgeDictionary = new Dictionary<int, List<string>>(); //declaring a dictionary
+        private Dictionary<int, List<string>> _badgeDictionary = new Dictionary<int, List<string>>();
 
-      
-        public void AddNewBadge(Badge newBadge) //adding new badge
+        public Dictionary<int, List<string>> ListOfBadges()
         {
-            badgeDictionary.Add(newBadge.BadgeID, newBadge.ListOfDoors);
+            return _badgeDictionary;
         }
 
-        public Dictionary<int, List<string>>BadgeList() //list all badges
+        public void AddNewBadge(Badge newBadge)
         {
-            return badgeDictionary;
+            _badgeDictionary.Add(newBadge.BadgeID, newBadge.ListOfDoors);
         }
 
-        public Badge ListByBadgeID(int badgeID) //get door info with badge id
+        public Badge GetBadgeByBadgeID(int badgeID)
         {
-            foreach (KeyValuePair<int, List<string>> existingBadge in badgeDictionary)
+            foreach (KeyValuePair<int, List<string>> existingBadge in _badgeDictionary)
             {
                 foreach (string door in existingBadge.Value)
                 {
@@ -36,20 +35,5 @@ namespace _03_Badges
             }
             return null;
         }
-
-        public bool UpdateExistingBadge(int originalAccess, Badge newAccess )
-        {
-            Badge accessNow = ListByBadgeID(originalAccess);
-            if (accessNow != null)
-            {
-                accessNow.ListOfDoors = newAccess.ListOfDoors;
-              
-                return true;
-            }
-            return false;
-        }
-       
     }
-
-
 }

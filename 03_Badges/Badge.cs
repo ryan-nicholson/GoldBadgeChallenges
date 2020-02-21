@@ -11,7 +11,6 @@ namespace _03_Badges
         public int BadgeID { get; set; } //properties
         public List<string> ListOfDoors { get; set; }
 
-
         public Badge() { } //empty constructor
         public Badge(int badgeID,List<string> listOfDoors)
         {

@@ -19,7 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_Badges", "03_Badges\03_B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_Badge_Repository_Tests", "03_Badge_Repository_Tests\03_Badge_Repository_Tests.csproj", "{FD2A316F-89F6-4DFE-8CB6-72F2A0DCD660}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Badge_Repository_ConsoleUI", "Badge_Repository_ConsoleUI\Badge_Repository_ConsoleUI.csproj", "{6D3544BC-44A9-4ED2-BC81-92680595F959}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_Badge_Repository_ConsoleUI", "Badge_Repository_ConsoleUI\03_Badge_Repository_ConsoleUI.csproj", "{6D3544BC-44A9-4ED2-BC81-92680595F959}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
