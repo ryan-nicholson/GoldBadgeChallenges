@@ -58,7 +58,7 @@ namespace Badge_Repository_ConsoleUI
             bool continueRunning = true;
             while (continueRunning)
             {
-                Console.Write("Please enter a Door ID for which this badge should have access: ");
+                Console.Write("Please enter a Door ID for this badge: ");
                 newBadge.ListOfDoors = new List<string>();
                 string userInput = Console.ReadLine().ToUpper();
                 newBadge.ListOfDoors.Add(userInput);
