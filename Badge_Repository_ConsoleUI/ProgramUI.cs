@@ -64,7 +64,7 @@ namespace Badge_Repository_ConsoleUI
                 newBadge.ListOfDoors.Add(userInput);
                 Console.Write("Any other doors to add ? (y/n)");
                 string userResponse = Console.ReadLine();
-                if (userResponse == "n")
+                if (userResponse == "n") // asking user if they want to add second door to badge
                 {
                     continueRunning = false;
                     _badgeRepository.AddNewBadge(newBadge);
@@ -82,7 +82,7 @@ namespace Badge_Repository_ConsoleUI
         {
             Dictionary<int, List<string>> badgeDictionary = _badgeRepository.ListOfBadges();
 
-            Console.WriteLine("{0, -10}", "BadgeID:");
+            Console.WriteLine("{0, -15}", "BadgeID:");
             foreach (KeyValuePair<int, List<string>> badge in badgeDictionary)
             {
                 Console.WriteLine(badge.Key);
